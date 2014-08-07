@@ -1,0 +1,1 @@
+curl --verbose --header "Content-Type: application/json" -X POST -d '{"firstName":"FOO", "lastName":"BAR", "phone":"01792456999"}' http://localhost:8080/contact

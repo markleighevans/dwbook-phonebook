@@ -1,0 +1,22 @@
+CREATE DATABASE phonebook;
+
+CREATE USER 'phonebookuser'@'localhost' IDENTIFIED BY 'phonebookpassword';
+
+GRANT ALL ON phonebook.* to 'phonebookuser'@'localhost';
+
+USE phonebook;
+
+
+CREATE TABLE contact (
+   id serial,
+   firstName VARCHAR(255) NOT NULL,
+   lastName VARCHAR(255) NOT NULL,
+   phone varchar(30) NOT NULL,
+   PRIMARY KEY ( id )
+)
+ENGINE=InnoDb
+DEFAULT CHARSET=UTF8
+AUTO_INCREMENT=1
+;
+
+INSERT INTO contact VALUES (NULL, 'Kath', 'Evans', '07790381432'), (NULL, 'Mark', 'Evans', '07799611737');
