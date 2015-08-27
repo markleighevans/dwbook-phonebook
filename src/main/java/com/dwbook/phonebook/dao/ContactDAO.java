@@ -12,7 +12,8 @@ public interface ContactDAO {
     Contact getContactById(@Bind("id") int id);
 
     @GetGeneratedKeys
-    @SqlUpdate("insert into contact (id, firstName, lastName, phone) values (NULL, :firstName, :lastName, :phone)")
+    //@SqlUpdate("insert into contact (id, firstName, lastName, phone) values (NULL, :firstName, :lastName, :phone)")
+    @SqlUpdate("insert into contact (firstName, lastName, phone) values ( :firstName, :lastName, :phone)")
     int createContact(@Bind("firstName") String firstName, @Bind("lastName") String lastName, @Bind("phone") String phone);
 
     @SqlUpdate("update contact set firstName = :firstName, lastName = :lastName, phone = :phone where id = :id")

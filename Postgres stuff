@@ -4,7 +4,7 @@ CREATE SEQUENCE mgr_id_seq;
 
 
 CREATE TABLE contact (
-   id INTEGER PRIMARY KEY DEFAULT NEXTVAL('mgr_id_seq')
+   id INTEGER PRIMARY KEY DEFAULT NEXTVAL('mgr_id_seq'),
    firstName VARCHAR(255) NOT NULL,
    lastName VARCHAR(255) NOT NULL,
    phone varchar(30) NOT NULL

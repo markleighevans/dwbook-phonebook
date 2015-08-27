@@ -1,1 +1,19 @@
-curl --verbose --header "Content-Type: application/json" -X POST -d '{"firstName":"FOO", "lastName":"BAR", "phone":"01792456999"}' http://localhost:8080/contact
+
+#!/bin/bash
+# bash trap command
+trap bashtrap INT
+# bash clear screen command
+clear;
+# bash trap function is executed when CTRL-C is pressed:
+# bash prints message => Executing bash trap subrutine !
+bashtrap()
+{
+    echo "CTRL+C Detected !...executing bash trap !"
+}
+# for loop from 1/10 to 10/10
+for a in `seq 1001 2001`; do
+    echo "$a/10 to Exit."
+    curl --verbose --header "Content-Type: application/json" -X POST -d '{"firstName":"FOO", "lastName":"BAR", "phone": "'"$a"'" }' http://localhost:8080/contact
+
+done
+echo "Exit Bash Trap Example!!!"
