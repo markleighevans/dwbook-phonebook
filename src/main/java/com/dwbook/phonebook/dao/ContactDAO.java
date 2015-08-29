@@ -8,8 +8,12 @@ import org.skife.jdbi.v2.sqlobject.customizers.Mapper;
 public interface ContactDAO {
 
     @Mapper(ContactMapper.class)
+
     @SqlQuery("select * from contact where id = :id")
     Contact getContactById(@Bind("id") int id);
+
+    @SqlQuery("select count(*) from contact")
+    Contact getContactCount();
 
     @GetGeneratedKeys
     //@SqlUpdate("insert into contact (id, firstName, lastName, phone) values (NULL, :firstName, :lastName, :phone)")

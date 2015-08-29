@@ -19,14 +19,26 @@ public class ContactResource {
     }
 
     @GET
-    @Path("/{id}")
+
+    @Path("/show/{id}")
     public Response getContact(@PathParam("id") int id) {
         // retrieve information about the contact with the provided id
         Contact contact = contactDao.getContactById(id);
+
         return Response
                 .ok(contact)
                 .build();
     }
+
+    @GET
+    @Path("/listall/")
+    public Response ListAll() {
+        // retrieve information about the contact with the provided id
+        return Response
+                .ok("list all the contacts")
+                .build();
+    }
+
 
     @POST
     public Response createContact(Contact contact) throws URISyntaxException {
