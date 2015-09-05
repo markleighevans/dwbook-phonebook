@@ -1,7 +1,5 @@
-message: This is a message defined in the configuration file config.yaml.
-messageRepetitions: 3
 database:
    driverClass:  org.postgresql.Driver
    user: postgres
-   password: x2929873
+   password: postgres
    url: jdbc:postgresql://localhost/postgres
